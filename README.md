@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/Recruitee/mix_docker.svg?branch=master)](https://travis-ci.org/Recruitee/mix_docker)
 
 Put your Elixir app inside minimal Docker image.
-Based on [alpine linux](https://hub.docker.com/r/bitwalker/alpine-erlang/)
+Based on [alpine linux](https://hub.docker.com/r/bitwalker/alpine-elixir/)
 and [distillery](https://github.com/bitwalker/distillery) releases.
 
 ## Installation
@@ -100,15 +100,19 @@ See below for a list of possible variables
 
 
 #### What version of Erlang/Elixir is installed by default?
-The default dockerfiles are based on [bitwalker/alpine-erlang](https://github.com/bitwalker/alpine-erlang) and elixir installed from [apk repository](https://pkgs.alpinelinux.org/packages?name=elixir&branch=&repo=&arch=&maintainer=)
+Up to and including v0.5.0, the default dockerfiles were based on [bitwalker/alpine-erlang](https://github.com/bitwalker/alpine-erlang) and elixir installed from [apk repository](https://pkgs.alpinelinux.org/packages?name=elixir&branch=&repo=&arch=&maintainer=)
+
+As of v0.6.0, the default dockerfiles are based on [bitwalker/alpine-elixir](https://github.com/bitwalker/alpine-elixir)
 
 The following table summarizes the default versions:
 
-| mix_docker version   | alpine   | erlang   | elixir                             |
-|----------------------|----------|----------|------------------------------------|
-| up to `0.3.2`        | `3.4`    | `18.3`   | `elixir@edge` at the time of build |
-| `0.4.0`              | `3.5`    | `19.2`   | `elixir@edge=1.4.1-r0`             |
-| `0.4.1`              | `3.5`    | `19.2`   | `elixir@edge=1.4.2-r0`             |
+| mix_docker version   | alpine   | erlang   | elixir                             | base image    |
+|----------------------|----------|----------|------------------------------------|---------------|
+| up to `0.3.2`        | `3.4`    | `18.3`   | `elixir@edge` at the time of build | alpine-erlang |
+| `0.4.0`              | `3.5`    | `19.2`   | `elixir@edge=1.4.1-r0`             | alpine-erlang |
+| `0.4.1`              | `3.5`    | `19.2`   | `elixir@edge=1.4.2-r0`             | alpine-erlang |
+| `0.5.0`              | `3.5`    | `19.3`   | `elixir@edge=1.4.4-r0`             | alpine-erlang |
+| `0.6.0`              | `3.5`    | `19.3`   | `1.4.4`                            | alpine-elixir |
 
 Please note that you can use any version you want by customizing your dockerfiles. See `mix docker.customize` for reference.
 
