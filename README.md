@@ -112,7 +112,7 @@ The following table summarizes the default versions:
 | `0.4.0`              | `3.5`    | `19.2`   | `elixir@edge=1.4.1-r0`             | alpine-erlang |
 | `0.4.1`              | `3.5`    | `19.2`   | `elixir@edge=1.4.2-r0`             | alpine-erlang |
 | `0.5.0`              | `3.5`    | `19.3`   | `elixir@edge=1.4.4-r0`             | alpine-erlang |
-| `0.6.0`              | `3.5`    | `19.3`   | `1.4.4`                            | alpine-elixir |
+| `0.6.0`              | `3.5`    | `20.1.3` | `1.5.2`                            | alpine-elixir |
 
 Please note that you can use any version you want by customizing your dockerfiles. See `mix docker.customize` for reference.
 
