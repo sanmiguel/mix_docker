@@ -1,4 +1,4 @@
-FROM bitwalker/alpine-elixir:1.4.4
+FROM bitwalker/alpine-elixir:1.5.2
 
 # TODO Why do we have libgcc and libstdc++ here?
 RUN apk update && \
