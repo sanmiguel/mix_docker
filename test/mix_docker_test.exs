@@ -17,7 +17,7 @@ defmodule MixDockerTest do
   end
 
   def docker(task, args \\ []) do
-    IO.puts "$ docker #{task} #{args}"
+    IO.puts "$ docker #{task} #{inspect args}"
     assert {_, 0} = System.cmd("docker", [task | args], into: IO.stream(:stdio, :line))
   end
 
