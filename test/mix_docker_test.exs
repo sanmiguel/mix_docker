@@ -16,6 +16,11 @@ defmodule MixDockerTest do
     assert {_, 0} = System.cmd("mix", [task | args], into: IO.stream(:stdio, :line))
   end
 
+  def docker(task, args \\ []) do
+    IO.puts "$ docker #{task} #{args}"
+    assert {_, 0} = System.cmd("docker", [task | args], into: IO.stream(:stdio, :line))
+  end
+
   def cleanup(%{dir: dir} = tags) do
     inapp(dir) do
       File.rm_rf! "rel"
@@ -52,6 +57,8 @@ defmodule MixDockerTest do
         mix "docker.build"
 
         mix "docker.release"
+
+        docker "run", ["-i", "--rm", "mix-docker-test:release", "describe"]
       end
     end
 
@@ -82,6 +89,8 @@ defmodule MixDockerTest do
         mix "docker.build"
 
         mix "docker.release"
+
+        docker "run", ["-i", "--rm", "mix-docker-test:release", "describe"]
       end
     end
   end
