@@ -2,7 +2,7 @@ FROM bitwalker/alpine-elixir:1.4.4
 
 # TODO Why do we have libgcc and libstdc++ here?
 RUN apk update && \
-    apk --no-cache --update add libgcc libstdc++ && \
+    apk --no-cache --update add libgcc libstdc++ bash && \
     rm -rf /var/cache/apk/*
 
 EXPOSE 4000
